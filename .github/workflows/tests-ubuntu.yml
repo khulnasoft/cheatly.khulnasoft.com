@@ -45,4 +45,4 @@ jobs:
           wget --timeout 3 --tries=5 --spider localhost:8002 2>&1 | grep -i http
           docker-compose logs --no-color
       - name: Run standalone tests
-        run: CHEATSH_TEST_STANDALONE=NO bash tests/run-tests.sh
+        run: CHEATLY_TEST_STANDALONE=NO bash tests/run-tests.sh

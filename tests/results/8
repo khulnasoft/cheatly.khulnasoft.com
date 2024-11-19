@@ -42,7 +42,7 @@ CHEATLY_HOME=${CHEATLY:-"$HOME"/.cheatly.khulnasoft.com}
 # * auto = try standalone usage first
 CHEATLY_MODE="$(cat "$CHEATLY_HOME"/mode 2> /dev/null)"
 [ "$CHEATLY_MODE" != lite ] && CHEATLY_MODE=auto
-CHEATSH_INSTALLATION="$(cat "$CHEATLY_HOME/standalone" 2> /dev/null)"
+CHEATLY_INSTALLATION="$(cat "$CHEATLY_HOME/standalone" 2> /dev/null)"
 
 
 export LESSSECURE=1
@@ -202,7 +202,7 @@ EOF
   virtualenv "${virtualenv_python3_option[@]}" ve \
       || fatal "Could not create virtual environment with 'virtualenv ve'"
 
-  export CHEATSH_PATH_WORKDIR=$PWD
+  export CHEATLY_PATH_WORKDIR=$PWD
 
   # rapidfuzz does not support Python 2,
   # so if we are using Python 2, install fuzzywuzzy instead
@@ -231,9 +231,9 @@ EOF
   (
     cd tests || exit
 
-    if CHEATSH_TEST_STANDALONE=YES \
-       CHEATSH_TEST_SKIP_ONLINE=NO \
-       CHEATSH_TEST_SHOW_DETAILS=NO \
+    if CHEATLY_TEST_STANDALONE=YES \
+       CHEATLY_TEST_SKIP_ONLINE=NO \
+       CHEATLY_TEST_SHOW_DETAILS=NO \
        PYTHON=../ve/bin/python bash run-tests.sh | tee -a "$LOG"
     then
       printf "\033[0;32m%s\033[0m\n" "SUCCESS"
@@ -297,8 +297,8 @@ cheatly_mode()
 
   if [ -z "$mode" ]; then
     echo "current mode: $CHEATLY_MODE ($(printf "%s" "$text" | grep "$CHEATLY_MODE" | sed "s/$CHEATLY_MODE//; s/^ *//; s/ \+/ /"))"
-    if [ -d "$CHEATSH_INSTALLATION" ]; then
-      echo "cheatly.khulnasoft.com standalone installation: $CHEATSH_INSTALLATION"
+    if [ -d "$CHEATLY_INSTALLATION" ]; then
+      echo "cheatly.khulnasoft.com standalone installation: $CHEATLY_INSTALLATION"
     else
       echo 'cheatly.khulnasoft.com standalone installation not found; falling back to the "lite" mode'
     fi
@@ -397,7 +397,7 @@ gen_random_str()
   fi
 )
 
-if [ "$CHEATLY_MODE" = auto ] && [ -d "$CHEATSH_INSTALLATION" ]; then
+if [ "$CHEATLY_MODE" = auto ] && [ -d "$CHEATLY_INSTALLATION" ]; then
   curl() {
     # ignoring all options
     # currently the standalone.py does not support them anyway
@@ -408,7 +408,7 @@ if [ "$CHEATLY_MODE" = auto ] && [ -d "$CHEATSH_INSTALLATION" ]; then
     shift $((OPTIND - 1))
 
     local url; url="$1"; shift
-    PYTHONIOENCODING=UTF-8 "$CHEATSH_INSTALLATION/ve/bin/python" "$CHEATSH_INSTALLATION/lib/standalone.py" "${url#"$CHEATLY_URL"}" "$@"
+    PYTHONIOENCODING=UTF-8 "$CHEATLY_INSTALLATION/ve/bin/python" "$CHEATLY_INSTALLATION/lib/standalone.py" "${url#"$CHEATLY_URL"}" "$@"
   }
 elif [ "$(uname -s)" = OpenBSD ] && [ -x /usr/bin/ftp ]; then
   # any better test not involving either OS matching or actual query?
@@ -507,7 +507,7 @@ else
     this_query="$input"
     this_prompt="\033[0;32mcheatly.khulnasoft.com>\033[0m "
   fi
-  if [ -n "$this_query" ] && [ -z "$CHEATSH_RESTART" ]; then
+  if [ -n "$this_query" ] && [ -z "$CHEATLY_RESTART" ]; then
     printf "$this_prompt$this_query\n"
     curl -s "${CHEATLY_URL}"/"$(get_query_options "$query")"
   fi
@@ -733,7 +733,7 @@ cmd_update() {
     if grep -q ^__CHEATLY_VERSION= "$TMP2"; then
       # section was vaildated by us already
       args=(--shell "$section")
-      cp "$TMP2" "$0" && echo "Updated. Restarting..." && rm "$TMP2" && CHEATSH_RESTART=1 exec "$0" "${args[@]}"
+      cp "$TMP2" "$0" && echo "Updated. Restarting..." && rm "$TMP2" && CHEATLY_RESTART=1 exec "$0" "${args[@]}"
     else
       echo "Something went wrong. Please update manually"
     fi

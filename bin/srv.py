@@ -18,8 +18,8 @@ if '--debug' in sys.argv:
     # https://github.com/pallets/flask/issues/3825
     app.debug = True
 
-if 'CHEATSH_PORT' in os.environ:
-    port = int(os.environ.get('CHEATSH_PORT'))
+if 'CHEATLY_PORT' in os.environ:
+    port = int(os.environ.get('CHEATLY_PORT'))
 else:
     port = CONFIG['server.port']
 

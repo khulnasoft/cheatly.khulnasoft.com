@@ -2,10 +2,10 @@
 
 # 1) start server:
 #   without caching:
-#       CHEATSH_CACHE_TYPE=none CHEATSH_PORT=50000 python bin/srv.py
+#       CHEATLY_CACHE_TYPE=none CHEATLY_PORT=50000 python bin/srv.py
 #       (recommended)
 #   with caching:
-#       CHEATSH_REDIS_PREFIX=TEST1 CHEATSH_PORT=50000 python bin/srv.py
+#       CHEATLY_REDIS_PREFIX=TEST1 CHEATLY_PORT=50000 python bin/srv.py
 #       (for complex search queries + to test caching)
 # 2) configure CHEATLY_URL
 # 3) run the script
@@ -24,10 +24,10 @@ fi
 python_version="$($PYTHON -c 'import sys; print(sys.version_info[0])')"
 echo "Using PYTHON $python_version: $PYTHON"
 
-skip_online="${CHEATSH_TEST_SKIP_ONLINE:-NO}"
-test_standalone="${CHEATSH_TEST_STANDALONE:-YES}"
-show_details="${CHEATSH_TEST_SHOW_DETAILS:-YES}"
-update_tests_results="${CHEATSH_UPDATE_TESTS_RESULTS:-NO}"
+skip_online="${CHEATLY_TEST_SKIP_ONLINE:-NO}"
+test_standalone="${CHEATLY_TEST_STANDALONE:-YES}"
+show_details="${CHEATLY_TEST_SHOW_DETAILS:-YES}"
+update_tests_results="${CHEATLY_UPDATE_TESTS_RESULTS:-NO}"
 CHEATLY_URL="${CHEATLY_URL:-http://localhost:8002}"
 
 TMP=$(mktemp /tmp/cheatly.khulnasoft.com.tests-XXXXXXXXXXXXXX)
