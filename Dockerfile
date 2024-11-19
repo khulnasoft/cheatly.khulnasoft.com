@@ -1,12 +1,14 @@
-# Use a lightweight Alpine image
-FROM alpine:3.14
+# Use a Python-specific Alpine image
+FROM python:3.9-alpine
 
 # Set working directory
 WORKDIR /app
 
 # Install runtime dependencies
-RUN apk add --update --no-cache \
+RUN apk add --no-cache \
     git \
+    g++ \
+    libffi-dev \
     py3-six \
     py3-pygments \
     py3-yaml \
@@ -18,32 +20,25 @@ RUN apk add --update --no-cache \
     py3-redis \
     py3-jinja2 \
     py3-flask \
-    sed \
     bash \
     gawk
 
-# Install build dependencies, build missing Python packages, then clean up
-RUN apk add --no-cache --virtual build-deps \
-      py3-pip g++ python3-dev libffi-dev \
-    && pip3 install --no-cache-dir --upgrade pip \
-    && pip3 install --no-cache-dir pygments \
+# Install Python build dependencies and application dependencies
+RUN apk add --no-cache --virtual build-deps py3-pip \
+    && pip3 install --no-cache-dir --upgrade pip setuptools wheel \
+    && pip3 install --no-cache-dir -r requirements.txt \
     && apk del build-deps
 
 # Copy application files
 COPY . .
 
-# Install Python dependencies
-RUN apk add --no-cache --virtual build-deps py3-pip \
-    && pip3 install --no-cache-dir -r requirements.txt \
-    && apk del build-deps
-
-# Fetch dependencies and prepopulate data
+# Fetch dependencies
 RUN mkdir -p /root/.cheatly.khulnasoft.com/log/ \
     && python3 lib/fetch.py fetch-all
 
-# Expose a port if needed (e.g., Flask default port 5000)
+# Expose application port (optional)
 EXPOSE 5000
 
-# Define entry point and default command
+# Define entrypoint and default command
 ENTRYPOINT ["python3", "-u", "bin/srv.py"]
 CMD []
