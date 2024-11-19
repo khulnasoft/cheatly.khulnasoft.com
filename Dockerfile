@@ -23,6 +23,9 @@ RUN apk add --no-cache \
     bash \
     gawk
 
+# Copy only requirements.txt first for better caching
+COPY requirements.txt .
+
 # Install Python build dependencies and application dependencies
 RUN apk add --no-cache --virtual build-deps py3-pip \
     && pip3 install --no-cache-dir --upgrade pip setuptools wheel \
@@ -30,7 +33,7 @@ RUN apk add --no-cache --virtual build-deps py3-pip \
     && apk del build-deps
 
 # Copy application files
-COPY . .
+COPY . /app
 
 # Fetch dependencies
 RUN mkdir -p /root/.cheatly.khulnasoft.com/log/ \
