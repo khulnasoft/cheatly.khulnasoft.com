@@ -1,4 +1,4 @@
-[48;5;8m[24m cheat.sheets:btrfs [24m[0m
+[48;5;8m[24m cheatly.khulnasoft.comeets:btrfs [24m[0m
 [38;5;246;03m# Create a btrfs file system on /dev/sdb, /dev/sdc, and /dev/sdd[39;00m
 [38;5;252mmkfs.btrfs[39m[38;5;252m [39m[38;5;252m/dev/sdb[39m[38;5;252m [39m[38;5;252m/dev/sdc[39m[38;5;252m [39m[38;5;252m/dev/sdd[39m
 

@@ -1,5 +1,5 @@
 " To use cheatly.khulnasoft.com from your vim, install the cheatly.khulnasoft.com-vim plugin from David Beniamine
-" located at https://github.com/dbeniamine/cheatly.khulnasoft.com-vim.
+" located at https://github.com/khulnasoft/cheatly.khulnasoft.com/tree/master/vim.
 " See the page for the configuration options and the magic key combinations.
 "
 " ## Vizardry
@@ -12,17 +12,17 @@
 "
 " Add the following to your Vundle Plugin list and do InstallPlugins:
 " 
-"     Plugin 'dbeniamine/cheatly.khulnasoft.com-vim'
+"     Plugin 'khulnasoft/cheatly.khulnasoft.com/tree/master/vim'
 " 
 " ## Pathogen
 "
 " If you are using Pathogen, Run the following command in shell:
 "
-"     git clone https://github.com/dbeniamine/cheatly.khulnasoft.com-vim.git ~/.vim/bundle/cheatly.khulnasoft.com-vim
+"     git clone https://github.com/khulnasoft/cheatly.khulnasoft.com/tree/master/vim ~/.vim/bundle/cheatly.khulnasoft.com-vim
 " 
 " ## Quick install
 " 
-"     git clone https://github.com/dbeniamine/cheatly.khulnasoft.com-vim.git
+"     git clone https://github.com/khulnasoft/cheatly.khulnasoft.com/tree/master/vim
 "     cd cheatly.khulnasoft.com-vim/
 "     cp -r ./* ~/.vim
 

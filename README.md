@@ -510,7 +510,7 @@ Features supported by cheatly.khulnasoft.com plugins for different editors:
 
 ### Vim
 
-* [cheatly.khulnasoft.com-vim](https://github.com/dbeniamine/cheatly.khulnasoft.com-vim) — Vim support
+* [cheatly.khulnasoft.com-vim](https://github.com/khulnasoft/cheatly.khulnasoft.com/tree/master/vim) — Vim support
 
 Here is Vim configuration example:
 
@@ -522,7 +522,7 @@ let mapleader=" "
 call vundle#begin()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/syntastic'
-Bundle 'dbeniamine/cheatly.khulnasoft.com-vim'
+Bundle 'khulnasoft/cheatly.khulnasoft.com/tree/master/vim'
 call vundle#end()
 
 let g:syntastic_javascript_checkers = [ 'jshint' ]
@@ -537,7 +537,7 @@ In this example, several Vim plugins are used:
 
 * [gmarik/vundle](https://github.com/VundleVim/Vundle.vim) — Vim plugin manager
 * [scrooloose/syntastic](https://github.com/vim-syntastic/syntastic) — Syntax checking plugin
-* [cheatly.khulnasoft.com-vim](https://github.com/dbeniamine/cheatly.khulnasoft.com-vim) — Vim support
+* [cheatly.khulnasoft.com-vim](https://github.com/khulnasoft/cheatly.khulnasoft.com/tree/master/vim) — Vim support
 
 Syntastic shows warnings and errors (found by code analysis tools: `jshint`, `merlin`, `pylint`, `shellcheck` etc.),
 and `cheatly.khulnasoft.com-vim` shows you explanations for the errors and warnings
@@ -825,7 +825,7 @@ all over the world
 
 |Cheat sheets           |Repository                                                                          |C/U*                                                                                                                  |Stars                                                                                                   |Creation Date|
 |-----------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|-------------|
-|UNIX/Linux, programming|[cheat.sheets](https://github.com/khulnasoft/cheat.sheets)                              |![](https://img.shields.io/github/contributors-anon/khulnasoft/cheat.sheets?label=%F0%9F%91%A5&labelColor=white)           |![](https://img.shields.io/github/stars/khulnasoft/cheat.sheets?label=%E2%AD%90&labelColor=white)           |May 1, 2017  |
+|UNIX/Linux, programming|[cheatly.khulnasoft.comeets](https://github.com/khulnasoft/cheatly.khulnasoft.comeets)                              |![](https://img.shields.io/github/contributors-anon/khulnasoft/cheatly.khulnasoft.comeets?label=%F0%9F%91%A5&labelColor=white)           |![](https://img.shields.io/github/stars/khulnasoft/cheatly.khulnasoft.comeets?label=%E2%AD%90&labelColor=white)           |May 1, 2017  |
 |UNIX/Linux commands    |[tldr-pages/tldr](https://github.com/tldr-pages/tldr)                               |![](https://img.shields.io/github/contributors-anon/tldr-pages/tldr?label=%F0%9F%91%A5&labelColor=white)                           |![](https://img.shields.io/github/stars/tldr-pages/tldr?label=%E2%AD%90&labelColor=white)               |Dec 8, 2013  |
 |UNIX/Linux commands    |[chrisallenlane/cheat](https://github.com/chrisallenlane/cheat)                     |![](https://img.shields.io/github/contributors-anon/chrisallenlane/cheat?label=%F0%9F%91%A5&labelColor=white)          |![](https://img.shields.io/github/stars/chrisallenlane/cheat?label=%E2%AD%90&labelColor=white)          |Jul 28, 2013 |
 |Programming languages  |[adambard/learnxinyminutes-docs](https://github.com/adambard/learnxinyminutes-docs) |![](https://img.shields.io/github/contributors-anon/adambard/learnxinyminutes-docs?label=%F0%9F%91%A5&labelColor=white)|![](https://img.shields.io/github/stars/adambard/learnxinyminutes-docs?label=%E2%AD%90&labelColor=white)|Jun 23, 2013 |
@@ -861,7 +861,7 @@ If you want to add a cheat sheet, you have one of the following
 ways:
 
 * Add it to one of the external cheat sheets repositories; you should decide on your own what is the best repository for your cheat sheet;
-* Add it to the local cheatly.khulnasoft.com repository ([cheat.sheets](https://github.com/khulnasoft/cheat.sheets)) on github (fork, commit, pull request);
+* Add it to the local cheatly.khulnasoft.com repository ([cheatly.khulnasoft.comeets](https://github.com/khulnasoft/cheatly.khulnasoft.comeets)) on github (fork, commit, pull request);
 * Post it on cheatly.khulnasoft.com using curl or a web browser ([cheatly.khulnasoft.com/:post](http://cheatly.khulnasoft.com/:post)).
 
 If you want to change an existing cheat sheet,

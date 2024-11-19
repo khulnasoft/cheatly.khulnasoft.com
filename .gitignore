@@ -8,3 +8,10 @@ typescript
 venv/
 bin/upstream
 upstream/
+
+/target
+
+# Needed for remark language server for some reason
+/node_modules
+package.json
+package-lock.json
