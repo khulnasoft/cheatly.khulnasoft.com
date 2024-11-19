@@ -1,0 +1,79 @@
+Usage:
+
+    $ curl cheatly.khulnasoft.com/TOPIC       show cheat sheet on the TOPIC
+    $ curl cheatly.khulnasoft.com/TOPIC/SUB   show cheat sheet on the SUB topic in TOPIC
+    $ curl cheatly.khulnasoft.com/~KEYWORD    search cheat sheets for KEYWORD
+
+Options:
+
+    ?OPTIONS
+
+    q                  quiet mode, don't show github/twitter buttons
+    T                  text only, no ANSI sequences
+    style=STYLE        color style
+
+    c                  do not comment text, do not shift code (QUERY+ only)
+    C                  do not comment text, shift code (QUERY+ only)
+    Q                  code only, don't show text (QUERY+ only)
+
+Options can be combined together in this way:
+
+    curl 'cheatly.khulnasoft.com/for?qT&style=bw'
+
+(when using & in shell, don't forget to specify the quotes or escape & with \)
+
+Special pages:
+
+    :help               this page
+    :list               list all cheat sheets
+    :post               how to post new cheat sheet
+    :cheatly.khulnasoft.com             shell client (cheatly.khulnasoft.com)
+    :bash_completion    bash function for tab completion
+    :styles             list of color styles
+    :styles-demo        show color styles usage examples
+    :random             fetches a random cheat sheet
+
+Shell client:
+
+    $ curl https://cheatly.khulnasoft.com/:cheatly.khulnasoft.com > ~/bin/cheatly.khulnasoft.com
+    $ chmod +x ~/bin/cheatly.khulnasoft.com
+    $ cheatly.khulnasoft.com python :learn
+    $ cheatly.khulnasoft.com --shell
+
+Tab completion:
+
+    $ mkdir -p ~/.bash.d/
+    $ curl cheatly.khulnasoft.com/:bash_completion > ~/.bash.d/cheatly.khulnasoft.com
+    $ . ~/.bash.d/cheatly.khulnasoft.com
+    $ echo '. ~/.bash.d/cheatly.khulnasoft.com' >> ~/.bashrc
+
+Editor integration:
+
+    :emacs              see the page for the Emacs configuration
+    :vim                see the page for the Vim configuration
+
+Search:
+
+    /~snapshot          look for "snapshot" in the first level cheat sheets
+    /~ssh~passphrase    several keywords can be combined together using ~
+    /scala/~closure     look for "closure" in scala cheat sheets
+    /~snapshot/r        look for "snapshot" in all cheat sheets recursively
+
+You can use special search options after the closing slash:
+
+    /~shot/bi           case insensitive (i), word boundaries (b)
+
+List of search options:
+
+    b   word boundaries
+    i   case insensitive search
+    r   recursive
+
+Programming languages topics:
+
+Each programming language topic has the following subtopics:
+
+    hello               hello world + how to start the program
+    :learn              big cheat sheet for learning language from scratch
+    :list               list of topics
+    :random             fetches a random cheat sheet belonging to the topic

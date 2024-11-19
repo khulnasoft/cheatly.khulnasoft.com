@@ -1,0 +1,216 @@
+## curl cheatly.khulnasoft.com
+
+To access a cheat sheet you can simply issue a plain HTTP or HTTPS request
+specifying the topic name in the query URL:
+
+    {1curl cheatly.khulnasoft.com}{2/tar}
+    {1curl https://cheatly.khulnasoft.com}{2/tar}
+
+You can use the full service name, {2cheatly.khulnasoft.com}, or the shorter variant, {2cheatly.khulnasoft.com}.
+They are equivalent:
+
+    {1curl https://}{2cheatly.khulnasoft.com}{1/tar}
+    {1curl https://}{2cheatly.khulnasoft.com}{1/tar}
+
+The preferred access protocol is HTTPS, and you should always use it when possible.
+
+Cheat sheets in the root namespaces cover UNIX/Linux commands.
+
+Cheat sheets covering programming languages are located in subsections:
+
+    {1curl cheatly.khulnasoft.com/}{2go/func}
+
+All cheat sheets in a subsection can be listed using a special query {2:list} :
+
+    {1curl cheatly.khulnasoft.com/go/}{2:list}
+
+There are several other special queries. All of them start with a {2colon}.
+See {2/:help} for the full list of the special queries.
+
+
+## Search
+
+If a cheat sheet is too large, you can cut the needed part out using an
+additional search parameter. In this case, only the paragraph that contains the
+search term will be displayed:
+
+    {1curl cheatly.khulnasoft.com/tar}{2~extract}
+
+If the name of the cheat sheet is omitted, and only the search query is specified,
+all cheat sheets in the namespace are scanned, and the found occurrences
+are displayed:
+
+    {1curl cheatly.khulnasoft.com/}{2~extract}
+
+
+## Options
+
+cheatly.khulnasoft.com queries as well as search queries have many options.
+They can be specified as a part of the query string in the URL, after {2?}.
+Short single letter options can be joined together. Long options are
+separated with {2&}. For example, to switch syntax highlighting off
+the {2T} switch is used:
+
+    {1curl cheatly.khulnasoft.com/tar}{2?T}
+
+A full list of all available cheatly.khulnasoft.com options as well as description of all modes
+of operation can be found in {2/:help}.
+
+    {1curl cheatly.khulnasoft.com}{2/:help}
+
+
+## cheatly.khulnasoft.com client
+
+Though it's perfectly possible to access cheatly.khulnasoft.com using {1curl} (or any other
+HTTP client) alone, there is a special client that has several advantages
+over plain curling: {2cheatly.khulnasoft.com}.
+
+To install the client in {2~/bin}:
+
+    {1curl} {2https://cheatly.khulnasoft.com/:cheatly.khulnasoft.com} {1> ~/bin/cheatly.khulnasoft.com}
+    {1chmod +x ~/bin/cheatly.khulnasoft.com}
+
+Queries look the same, but you can use {1spaces} to separate words in addition to {1+}
+used with curl.
+
+    {1cheatly.khulnasoft.com} {2python zip lists}
+
+
+## cheatly.khulnasoft.com shell
+
+If you're always issuing queries about the same programming language, it can be
+more convenient to run the client in the shell mode and specify the query's
+context:
+
+    {1$} {2cheatly.khulnasoft.com --shell python}
+    {1cheatly.khulnasoft.com/python> zip lists}
+
+Of course, you can start the shell without the context too:
+
+    {1$} {2cheatly.khulnasoft.com --shell}
+    {1cheatly.khulnasoft.com> python zip lists}
+    {1cheatly.khulnasoft.com> go http query}
+    {1cheatly.khulnasoft.com> js iterate list}
+
+If you use one language predominantly, but sometimes issue queries about others,
+you may prepend the query with {2/}:
+
+    {1cheatly.khulnasoft.com/python>} {2zip lists}
+    {1cheatly.khulnasoft.com/python>} {2/go http query}
+    {1cheatly.khulnasoft.com/python>} {2/js iterate list}
+
+
+## :learn
+
+If you are just starting to learn a new programming language and you have no
+distinct queries for the moment, cheatly.khulnasoft.com can be a good starting point. As
+you know, it exports cheat sheets from the best cheat sheet repositories, 
+like {1Learn X in Y}, a repository of concise documentation devoted
+(but not limited) to learning programming languages from scratch.
+
+If you want start learning a new programming language, do (use less -R because
+the output could be quite big): 
+
+    {1curl cheatly.khulnasoft.com/elixir/}{2:learn} {1| less -R}
+
+Or simply {2:learn} with cheatly.khulnasoft.com (you don't need {2less -R} here, because
+{1cheatly.khulnasoft.com} starts pager if needed automatically):
+
+    {4cheatly.khulnasoft.com/elixir>} {2:learn}
+
+
+## Programming languages questions
+
+One of the most important features of cheatly.khulnasoft.com is that you can ask it any
+questions about programming languages and instantly get answers. You
+can use either direct HTTP queries or the cheatly.khulnasoft.com client:
+
+    {1curl cheatly.khulnasoft.com/}{2python/reverse+list}
+    
+    {4cheatly.khulnasoft.com/python>} {2reverse list}
+
+In the latter case you don't need + to separate the words in the query, you can
+do it in a more natural way, with spaces.
+
+If context in the cheatly.khulnasoft.com shell is not specified, you have to write the
+programming language name as the first word in the query:
+
+    {4cheatly.khulnasoft.com>} {2python reverse list}
+
+But if you are using only one programming language and all queries are about
+it, it's better to change the current context.
+
+
+## Comments
+
+Text in the answers is syntactically formatted as a comment in the corresponding
+programming language
+
+When using cheatly.khulnasoft.com, you can copy the result of the last query into the selection
+buffer (you may also call it "clipboard") using {2C} (or {2c}, with text):
+
+    {1cheatly.khulnasoft.com/python> reverse list}
+    {4...}
+    {1cheatly.khulnasoft.com/python>} {2C}
+    {4=1 lines copied}
+
+
+## bash TAB-completion for cheatly.khulnasoft.com
+
+One of the advantages of the {1cheatly.khulnasoft.com} client comparing to plain curl is that you
+can use TAB completion when writing its queries in {1bash}
+(other supported shells: {1zsh} and {1fish}).
+
+To install the TAB completion script, assuming you use bash, you have to do:
+
+    {1mkdir -p ~/.bash.d/}
+    {1curl} {2https://cheatly.khulnasoft.com/:bash_completion} {1> ~/.bash.d/cheatly.khulnasoft.com}
+    {1echo 'source ~/.bash.d/cheatly.khulnasoft.com' >> ~/.bashrc}
+    {1source ~/.bash.d/cheatly.khulnasoft.com}
+
+
+## Editor
+
+You can access cheatly.khulnasoft.com directly from editors: {1Vim} and {1Emacs}.
+It's a very important feature! You will absolutely like it.
+
+{1Imagine:}
+instead of switching to your browser, googling, browsing Stack Overflow
+and eventually copying the code snippets you need and later pasting them into
+the editor, you can achieve the same instantly and without leaving
+the editor at all!
+
+Here is how it works:
+
+1. In Vim, if you have a question while editing a program, you can just type
+your question {1directly in the buffer} and press {2<leader>KK}. You will get
+the answer to your question in {1pager}. (with {2<leader>KB} you'll get the answer
+in a separate {1buffer}).
+
+2. If you like the answer. You can manually paste it from the buffer or
+the pager, or if you are lazy you can use {2<leader>KP} to paste it under
+your question ({2<leader>KR} will replace your question). If you want the
+answer without the comments, {2<leader>KC} replays the last query
+toggling them.
+
+You have to install cheatly.khulnasoft.com {1Vim/Emacs plugins} for the editor support.
+See {2/:vim} or {2/:emacs} for detailed installation instructions.
+
+
+## Feature requests, feedback and contribution
+
+If you want to submit a new community driver repository for cheatly.khulnasoft.com please
+open a ticket on the project page on GitHub.
+
+If you want to modify an existing cheat sheet, please check the source of the
+cheat sheet (it is always displayed in the cheat sheet bottom line).
+
+If you want to add a new cheat sheet, add it here:
+{1https://github.com/khulnasoft/cheatly/tree/master/cheatsheets}
+
+If you want to suggest a new feature for cheatly.khulnasoft.com, or if you've found a bug,
+please open a new issue on github:
+{1https://github.com/khulnasoft/cheatly}
+
+If you want to get the major project updates, follow @khulnasoft in Twitter
+or this RSS feed: {1https://twitrss.me/twitter_user_to_rss/?user=khulnasoft}
