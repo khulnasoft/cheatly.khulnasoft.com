@@ -4,12 +4,13 @@ FROM python:3.9-alpine
 # Set working directory
 WORKDIR /app
 
-# Install build tools and libraries required for ICU and Python dependencies
+# Install build tools, Git, and libraries required for ICU and Python dependencies
 RUN apk add --no-cache --virtual build-deps \
       build-base \
       pkgconfig \
       icu-dev \
       py3-pip \
+      git \
     && apk add --no-cache \
       libffi-dev \
       py3-icu \
