@@ -4,44 +4,34 @@ FROM python:3.9-alpine
 # Set working directory
 WORKDIR /app
 
-# Install runtime dependencies
-RUN apk add --no-cache \
-    git \
-    g++ \
-    libffi-dev \
-    py3-six \
-    py3-pygments \
-    py3-yaml \
-    py3-gevent \
-    libstdc++ \
-    py3-colorama \
-    py3-requests \
-    py3-icu \
-    py3-redis \
-    py3-jinja2 \
-    py3-flask \
-    bash \
-    gawk
+# Install build tools and libraries required for ICU and Python dependencies
+RUN apk add --no-cache --virtual build-deps \
+      build-base \
+      pkgconfig \
+      icu-dev \
+      py3-pip \
+    && apk add --no-cache \
+      libffi-dev \
+      py3-icu \
+      py3-jinja2 \
+      py3-flask \
+      bash \
+      gawk
 
-# Copy only requirements.txt first for better caching
+# Copy only requirements.txt first to leverage Docker caching
 COPY requirements.txt .
 
-# Install Python build dependencies and application dependencies
-RUN apk add --no-cache --virtual build-deps py3-pip \
-    && pip3 install --no-cache-dir --upgrade pip setuptools wheel \
-    && pip3 install --no-cache-dir -r requirements.txt \
-    && apk del build-deps
+# Upgrade pip, setuptools, wheel and install Python dependencies
+RUN pip3 install --no-cache-dir --upgrade pip setuptools wheel \
+    && pip3 install --no-cache-dir -r requirements.txt
 
-# Copy application files
-COPY . /app
+# Copy the rest of the application
+COPY . .
 
-# Fetch dependencies
+# Fetch additional data
 RUN mkdir -p /root/.cheatly.khulnasoft.com/log/ \
     && python3 lib/fetch.py fetch-all
 
-# Expose application port (optional)
-EXPOSE 5000
-
-# Define entrypoint and default command
+# Set entrypoint and command
 ENTRYPOINT ["python3", "-u", "bin/srv.py"]
 CMD []
