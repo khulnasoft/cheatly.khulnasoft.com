@@ -1,0 +1,26 @@
+#!/bin/bash
+# shellcheck disable=SC1117,SC2001
+#
+# [X] open section
+# [X] one shot mode
+# [X] usage info
+# [X] dependencies check
+# [X] help
+# [X] yank/y/copy/c
+# [X] Y/C
+# [X] eof problem
+# [X] more
+# [X] stealth mode
+#
+# here are several examples for the stealth mode:
+#
+# zip lists
+# list permutation
+# random list element
+# reverse a list
+# read json from file
+# append string to a file
+# run process in background
+# count words in text counter
+# group elements list
+
