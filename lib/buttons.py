@@ -10,7 +10,7 @@ GITHUB_BUTTON = """
 
 GITHUB_BUTTON_2 = """
 <!-- Place this tag where you want the button to render. -->
-<a aria-label="Star khulnasoft/cheat.sheetss on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/khulnasoft/cheat.sheetss#stargazers_count" data-count-href="/khulnasoft/cheat.sheetss/stargazers" data-icon="octicon-star" href="https://github.com/khulnasoft/cheat.sheetss" class="github-button">cheat.sheetss</a>
+<a aria-label="Star khulnasoft/cheat.sheets on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/khulnasoft/cheat.sheets#stargazers_count" data-count-href="/khulnasoft/cheat.sheets/stargazers" data-icon="octicon-star" href="https://github.com/khulnasoft/cheat.sheets" class="github-button">cheat.sheets</a>
 """
 
 GITHUB_BUTTON_FOOTER = """

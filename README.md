@@ -343,7 +343,7 @@ To activate tab completion support for `cheatly.khulnasoft.com`, add the `:bash_
 To activate tab completion support for `cheatly.khulnasoft.com`, add the `:zsh` script to the *fpath* in your `~/.zshrc`:
 
 ```zsh
-    curl https://cheatly.khulnasoft.com/:zsh > ~/.zsh.d/_cht
+    curl https://cheatly.khulnasoft.com/:zsh > ~/.zsh.d/_cheatly
     echo 'fpath=(~/.zsh.d/ $fpath)' >> ~/.zshrc
     # Open a new shell to load the plugin
 ```
@@ -438,7 +438,7 @@ because you know what happens when you do.
 
 You can access cheatly.khulnasoft.com from Windows command line too.
 
-Use cheatly.khulnasoft.com command line client for that: [`cht.exe`](https://github.com/tpanj/cht.exe).
+Use cheatly.khulnasoft.com command line client for that: [`cheatly.exe`](https://github.com/tpanj/cheatly.exe).
 It supports:
 
 * output colorization;
@@ -447,7 +447,7 @@ It supports:
 
 You can also use [`scoop`](https://github.com/lukesampson/scoop) command-line installer for Windows to get it:
 ```batch
-scoop install cht
+scoop install cheatly
 ```
 
 ----
@@ -825,7 +825,7 @@ all over the world
 
 |Cheat sheets           |Repository                                                                          |C/U*                                                                                                                  |Stars                                                                                                   |Creation Date|
 |-----------------------|------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|-------------|
-|UNIX/Linux, programming|[cheat.sheetss](https://github.com/khulnasoft/cheat.sheetss)                              |![](https://img.shields.io/github/contributors-anon/khulnasoft/cheat.sheetss?label=%F0%9F%91%A5&labelColor=white)           |![](https://img.shields.io/github/stars/khulnasoft/cheat.sheetss?label=%E2%AD%90&labelColor=white)           |May 1, 2017  |
+|UNIX/Linux, programming|[cheat.sheets](https://github.com/khulnasoft/cheat.sheets)                              |![](https://img.shields.io/github/contributors-anon/khulnasoft/cheat.sheets?label=%F0%9F%91%A5&labelColor=white)           |![](https://img.shields.io/github/stars/khulnasoft/cheat.sheets?label=%E2%AD%90&labelColor=white)           |May 1, 2017  |
 |UNIX/Linux commands    |[tldr-pages/tldr](https://github.com/tldr-pages/tldr)                               |![](https://img.shields.io/github/contributors-anon/tldr-pages/tldr?label=%F0%9F%91%A5&labelColor=white)                           |![](https://img.shields.io/github/stars/tldr-pages/tldr?label=%E2%AD%90&labelColor=white)               |Dec 8, 2013  |
 |UNIX/Linux commands    |[chrisallenlane/cheat](https://github.com/chrisallenlane/cheat)                     |![](https://img.shields.io/github/contributors-anon/chrisallenlane/cheat?label=%F0%9F%91%A5&labelColor=white)          |![](https://img.shields.io/github/stars/chrisallenlane/cheat?label=%E2%AD%90&labelColor=white)          |Jul 28, 2013 |
 |Programming languages  |[adambard/learnxinyminutes-docs](https://github.com/adambard/learnxinyminutes-docs) |![](https://img.shields.io/github/contributors-anon/adambard/learnxinyminutes-docs?label=%F0%9F%91%A5&labelColor=white)|![](https://img.shields.io/github/stars/adambard/learnxinyminutes-docs?label=%E2%AD%90&labelColor=white)|Jun 23, 2013 |
@@ -861,7 +861,7 @@ If you want to add a cheat sheet, you have one of the following
 ways:
 
 * Add it to one of the external cheat sheets repositories; you should decide on your own what is the best repository for your cheat sheet;
-* Add it to the local cheatly.khulnasoft.com repository ([cheat.sheetss](https://github.com/khulnasoft/cheat.sheetss)) on github (fork, commit, pull request);
+* Add it to the local cheatly.khulnasoft.com repository ([cheat.sheets](https://github.com/khulnasoft/cheat.sheets)) on github (fork, commit, pull request);
 * Post it on cheatly.khulnasoft.com using curl or a web browser ([cheatly.khulnasoft.com/:post](http://cheatly.khulnasoft.com/:post)).
 
 If you want to change an existing cheat sheet,

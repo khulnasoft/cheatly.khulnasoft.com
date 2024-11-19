@@ -10,7 +10,7 @@ by three means:
     * config file `etc/config.yaml` located in the work dir
     * config file `etc/config.yaml` located in the project dir
       (if the work dir and the project dir are not the same)
-    * environment variables prefixed with `CHEATLY_`
+    * environment variables prefixed with `CHEATSH_`
 
 Configuration placement priorities, from high to low:
     * environment variables;
@@ -23,16 +23,16 @@ recommend that you use the config file located in the project dir,
 except the cases when you use your own cheatly.khulnasoft.com fork, and thus
 configuration is a part of the project repository.
 In all other cases `WORKDIR/etc/config.yaml` should be preferred.
-Location of this config file can be overridden by the `CHEATLY_PATH_CONFIG`
+Location of this config file can be overridden by the `CHEATSH_PATH_CONFIG`
 environment variable.
 
 Configuration parameters set by environment variables are mapped
 in this way:
-    * CHEATLY_ prefix is trimmed
+    * CHEATSH_ prefix is trimmed
     * _ replaced with .
     * the string is lowercased
 
-For instance, an environment variable named `CHEATLY_SERVER_PORT`
+For instance, an environment variable named `CHEATSH_SERVER_PORT`
 specifies the value for the `server.port` configuration parameter.
 
 Only parameters that imply scalar values (integer or string)
@@ -48,7 +48,7 @@ from pygments.styles import get_all_styles
 #def get_all_styles():
 #    return []
 
-_ENV_VAR_PREFIX = "CHEATLY"
+_ENV_VAR_PREFIX = "CHEATSH"
 
 _MYDIR = os.path.abspath(os.path.join(__file__, '..', '..'))
 
@@ -81,8 +81,8 @@ _CONFIG = {
         "rosetta",
         "late.nz",
         "question",
-        "cheat.sheetss",
-        "cheat.sheetss dir",
+        "cheat.sheets",
+        "cheat.sheets dir",
         "learnxiny",
         "rfc",
         "oeis",
@@ -120,10 +120,10 @@ _CONFIG = {
         ("^chmod/", "chmod"),
         ("^:", "internal"),
         ("/:list$", "internal"),
-        ("/$", "cheat.sheetss dir"),
+        ("/$", "cheat.sheets dir"),
         ],
     "routing.main": [
-        ("", "cheat.sheetss"),
+        ("", "cheat.sheets"),
         ("", "cheat"),
         ("", "tldr"),
         ("", "late.nz"),

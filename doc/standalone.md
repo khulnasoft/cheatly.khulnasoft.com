@@ -51,7 +51,7 @@ switch the caching off in the config file:
       type:   none
 ```
 
-or with the environment variable `CHEATLY_CACHE_TYPE=none`.
+or with the environment variable `CHEATSH_CACHE_TYPE=none`.
 
 ## Update cheat sheets
 

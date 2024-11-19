@@ -14,7 +14,7 @@ python/copy+file?QT         # [online]
 //
 python/:learn
 latencies                   # [python3]
-az                          # khulnasoft/cheat.sheetss
+az                          # khulnasoft/cheat.sheets
 python/rosetta/Substring    # rosetta
 python/rosetta/Substring?T  # rosetta
 python/rosetta/:list        # rosetta

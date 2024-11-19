@@ -71,7 +71,7 @@ class Router(object):
 
         skip = ['fosdem']
         if skip_dirs:
-            skip.append("cheat.sheetss dir")
+            skip.append("cheat.sheets dir")
         if skip_internal:
             skip.append("internal")
         sources_to_merge = [x for x in self._adapter if x not in skip]

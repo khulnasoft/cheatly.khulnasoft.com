@@ -546,7 +546,7 @@ cheatly.khulnasoft.comチートシートを編集する場合は、アップス�
 チートシートを追加する場合は、次のいずれかの方法があります。
 
     それを外部のチートシートレポジトリの1つに追加します。 自分のチートシートに最適なリポジトリが何であるかを決める必要があります。
-    github（fork、commit、pull request）のローカルcheatly.khulnasoft.comリポジトリ（ cheat.sheetss ）に追加します。
+    github（fork、commit、pull request）のローカルcheatly.khulnasoft.comリポジトリ（ cheat.sheets ）に追加します。
     curlやウェブブラウザ（ cheatly.khulnasoft.com/：post ）を使ってcheatly.khulnasoft.comに投稿してください。
 
 既存のチートシートを変更したい場合は、元のリポジトリを見つける必要があります（ブラウザでチートシートを開くと、チートシートの下部にリポジトリのgithubボタンが表示されます）、チートシートは、それを変更してください。 しばらくすると、変更はcheatly.khulnasoft.comで同期されます。

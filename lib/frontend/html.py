@@ -23,8 +23,8 @@ import frontend.ansi
 # in the adapter module
 GITHUB_REPOSITORY = {
     "late.nz"           :   'chubin/late.nz',
-    "cheat.sheetss"      :   'khulnasoft/cheat.sheetss',
-    "cheat.sheetss dir"  :   'khulnasoft/cheat.sheetss',
+    "cheat.sheets"      :   'khulnasoft/cheat.sheets',
+    "cheat.sheets dir"  :   'khulnasoft/cheat.sheets',
     "tldr"              :   'tldr-pages/tldr',
     "cheat"             :   'chrisallenlane/cheat',
     "learnxiny"         :   'adambard/learnxinyminutes-docs',
@@ -37,7 +37,7 @@ def visualize(answer_data, request_options):
     query = answer_data['query']
     answers = answer_data['answers']
     topics_list = answer_data['topics_list']
-    editable = (len(answers) == 1 and answers[0]['topic_type'] == 'cheat.sheetss')
+    editable = (len(answers) == 1 and answers[0]['topic_type'] == 'cheat.sheets')
 
     repository_button = ''
     if len(answers) == 1:
@@ -110,7 +110,7 @@ def _render_html(query, result, editable, repository_button, topics_list, reques
         # It's possible that topic directory starts with omitted underscore
         if '/' in query:
             query = '_' + query
-        edit_page_link = 'https://github.com/khulnasoft/cheat.sheetss/edit/master/sheets/' + query
+        edit_page_link = 'https://github.com/khulnasoft/cheat.sheets/edit/master/sheets/' + query
         edit_button = (
             '<pre style="position:absolute;padding-left:40em;overflow:visible;height:0;">'
             '[<a href="%s" style="color:cyan">edit</a>]'

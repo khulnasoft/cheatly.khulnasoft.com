@@ -25,14 +25,14 @@ if len(status) > 0:
 
 timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S +0000")
 
-cht_curr = path.join(SHARE_DIR, "cheatly.khulnasoft.com.txt")
-cht_new = path.join(SHARE_DIR, "cheatly.khulnasoft.com.txt.new")
+cheatly_curr = path.join(SHARE_DIR, "cheatly.khulnasoft.com.txt")
+cheatly_new = path.join(SHARE_DIR, "cheatly.khulnasoft.com.txt.new")
 
 re_version = re.compile(r"^__CHEATLY_VERSION=(.*)$")
 re_timestamp = re.compile(r"^__CHEATLY_DATETIME=.*$")
 
-with open(cht_curr, "rt") as fin:
-    with open(cht_new, "wt") as fout:
+with open(cheatly_curr, "rt") as fin:
+    with open(cheatly_new, "wt") as fout:
         for line in fin:
             match = re_version.match(line)
             if match:
@@ -47,11 +47,11 @@ with open(cht_curr, "rt") as fin:
 
             fout.write(line)
 
-shutil.copymode(cht_curr, cht_new)
-os.remove(cht_curr)
-os.rename(cht_new, cht_curr)
+shutil.copymode(cheatly_curr, cheatly_new)
+os.remove(cheatly_curr)
+os.rename(cheatly_new, cheatly_curr)
 
-message = "cht: v%s" % version
-run(["git", "add", cht_curr])
+message = "cheatly: v%s" % version
+run(["git", "add", cheatly_curr])
 run(["git", "commit", "-m", message])
-run(["git", "tag", "cht@%s" % version, "-m", message])
+run(["git", "tag", "cheatly@%s" % version, "-m", message])

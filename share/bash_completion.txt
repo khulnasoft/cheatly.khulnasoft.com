@@ -1,4 +1,4 @@
-_cht_complete()
+_cheatly_complete()
 {
     local cur prev opts
     _get_comp_words_by_ref -n : cur
@@ -14,4 +14,4 @@ _cht_complete()
     fi
     return 0
 }
-complete -F _cht_complete cheatly.khulnasoft.com
+complete -F _cheatly_complete cheatly.khulnasoft.com

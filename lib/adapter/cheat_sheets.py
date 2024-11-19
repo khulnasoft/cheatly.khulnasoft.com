@@ -1,6 +1,6 @@
 """
 Implementation of the adapter for the native cheatly.khulnasoft.com cheat sheets repository,
-cheat.sheetss.  The cheat sheets repository is hierarchically structured: cheat
+cheat.sheets.  The cheat sheets repository is hierarchically structured: cheat
 sheets covering programming languages are are located in subdirectories.
 """
 
@@ -39,12 +39,12 @@ def _sanitize_dirnames(filename, restore=False):
 class CheatSheets(GitRepositoryAdapter):
 
     """
-    Adapter for the cheat.sheetss cheat sheets.
+    Adapter for the cheat.sheets cheat sheets.
     """
 
-    _adapter_name = "cheat.sheetss"
+    _adapter_name = "cheat.sheets"
     _output_format = "code"
-    _repository_url = "https://github.com/khulnasoft/cheat.sheetss"
+    _repository_url = "https://github.com/khulnasoft/cheat.sheets"
     _cheatsheet_files_prefix = "sheets/"
 
     def _get_list(self, prefix=None):
@@ -97,7 +97,7 @@ class CheatSheetsDir(CheatSheets):
     by the CheatSheets adapter)
     """
 
-    _adapter_name = "cheat.sheetss dir"
+    _adapter_name = "cheat.sheets dir"
     _output_format = "text"
 
     def _get_list(self, prefix=None):
