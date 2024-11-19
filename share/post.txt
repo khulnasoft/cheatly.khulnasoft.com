@@ -1,6 +1,6 @@
 You can add a new entry to a cheat sheet or create a new cheat sheet
 in one of the following ways (your cheat sheet will be eventually added
-to khulnasoft/cheatly):
+to khulnasoft/cheat.sheetss):
 
 1. With curl:
 
@@ -13,8 +13,8 @@ to khulnasoft/cheatly):
 2. With git:
 
 ~~~
-    # clone khulnasoft/cheatly
-    git pull https://github.com/${you}/cheatly && cd cheatly
+    # clone khulnasoft/cheat.sheetss
+    git pull https://github.com/${you}/cheat.sheetss && cd cheat.sheetss
     cp ${cheatsheet} newcmd
     git add newcmd
     git commit -m 'added newcmd cheat sheet' newcmd

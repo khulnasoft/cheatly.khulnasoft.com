@@ -2,7 +2,7 @@ version: '2'
 services:
   app:
     build: .
-    image: cheatly
+    image: cheatly.khulnasoft.com
     container_name: cheatly
     depends_on:
       - redis

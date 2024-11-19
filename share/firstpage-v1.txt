@@ -34,4 +34,4 @@ To post a cheat sheet (details in {/:post}):
 
     $ curl -F 'newcmd=<-' cheatly.khulnasoft.com
 
-[Follow @khulnasoft for updates] [github.com/khulnasoft/cheatly]
+[Follow @khulnasoft for updates] [github.com/khulnasoft/cheatly.khulnasoft.com]

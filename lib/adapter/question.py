@@ -35,7 +35,7 @@ Examples:
 See /:help for more info.
 
 If the problem persists, file a GitHub issue at
-github.com/khulnasoft/cheatly or ping @khulnasoft
+github.com/khulnasoft/cheatly.khulnasoft.com or ping @khulnasoft
 """
 
 class Question(UpstreamAdapter):

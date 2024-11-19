@@ -101,7 +101,7 @@ It can be overridden by a command line parameter to this script:
 
     ${0##*/} --standalone-install DIR
 
-See cheatly.khulnasoft.com/:standalone or https://github.com/khulnasoft/cheatly/README.md
+See cheatly.khulnasoft.com/:standalone or https://github.com/khulnasoft/cheatly.khulnasoft.com/README.md
 for more information:
 
     cheatly.khulnasoft.com :standalone
@@ -168,7 +168,7 @@ EOF
   fi
 
   _say_what_i_do Cloning cheatly.khulnasoft.com locally
-  local url=https://github.com/khulnasoft/cheatly
+  local url=https://github.com/khulnasoft/cheatly.khulnasoft.com
   rmdir "$installdir"
   git clone "$url" "$installdir" || fatal Could not clone "$url" with git into "$installdir"
   cd "$installdir" || fatal "Cannot cd into $installdir"
@@ -281,7 +281,7 @@ All cheat sheets will be automatically actualized each hour.
 
 If you are running a server reachable from the Internet, it can be instantly
 notified via a HTTP request about any cheat sheets changes. For that, please
-open an issue on the cheatly.khulnasoft.com project repository [github.com/khulnasoft/cheatly]
+open an issue on the cheatly.khulnasoft.com project repository [github.com/khulnasoft/cheatly.khulnasoft.com]
 with the ENTRY-POINT from the URL https://ENTRY-POINT/:actualize specified
 EOF
 }

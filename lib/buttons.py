@@ -5,12 +5,12 @@ TWITTER_BUTTON = """
 
 GITHUB_BUTTON = """
 <!-- Place this tag where you want the button to render. -->
-<a aria-label="Star chubin/wttr.in on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/khulnasoft/cheatly#stargazers_count" data-count-href="/khulnasoft/cheatly/stargazers" data-icon="octicon-star" href="https://github.com/khulnasoft/cheatly" class="github-button">cheatly.khulnasoft.com</a>
+<a aria-label="Star chubin/wttr.in on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/khulnasoft/cheatly.khulnasoft.com#stargazers_count" data-count-href="/khulnasoft/cheatly.khulnasoft.com/stargazers" data-icon="octicon-star" href="https://github.com/khulnasoft/cheatly.khulnasoft.com" class="github-button">cheatly.khulnasoft.com</a>
 """
 
 GITHUB_BUTTON_2 = """
 <!-- Place this tag where you want the button to render. -->
-<a aria-label="Star khulnasoft/cheatly on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/khulnasoft/cheatly#stargazers_count" data-count-href="/khulnasoft/cheatly/stargazers" data-icon="octicon-star" href="https://github.com/khulnasoft/cheatly/tree/master/cheatsheets" class="github-button">cheatly</a>
+<a aria-label="Star khulnasoft/cheat.sheetss on GitHub" data-count-aria-label="# stargazers on GitHub" data-count-api="/repos/khulnasoft/cheat.sheetss#stargazers_count" data-count-href="/khulnasoft/cheat.sheetss/stargazers" data-icon="octicon-star" href="https://github.com/khulnasoft/cheat.sheetss" class="github-button">cheat.sheetss</a>
 """
 
 GITHUB_BUTTON_FOOTER = """

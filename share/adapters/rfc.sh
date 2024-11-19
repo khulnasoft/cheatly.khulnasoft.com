@@ -55,7 +55,7 @@ RFC_get()
       if [ $? -ne 0 ]
       then
         echo "Error retrieving https://www.rfc-editor.org/info/rfc${1}"
-        echo "Please create github issue at https://github.com/khulnasoft/cheatly/issues"
+        echo "Please create github issue at https://github.com/khulnasoft/cheatly.khulnasoft.com/issues"
         return 2
       # RFC never issued
       elif grep -q '<h2>Not Issued</h2>' ${WEB_RESP}
@@ -75,7 +75,7 @@ RFC_get()
       # Unknown error
       else
         echo "Error retrieving RFC $1"
-        echo "Please create github issue at https://github.com/khulnasoft/cheatly/issues"
+        echo "Please create github issue at https://github.com/khulnasoft/cheatly.khulnasoft.com/issues"
         return 2
       fi
     fi
@@ -105,7 +105,7 @@ RFC_get()
   if grep -q '<!DOCTYPE html>' ${WEB_RESP}
   then
     echo "Error retrieving RFC $1"
-    echo "Please create github issue at https://github.com/khulnasoft/cheatly/issues"
+    echo "Please create github issue at https://github.com/khulnasoft/cheatly.khulnasoft.com/issues"
     return 2
   else
     cat -s ${WEB_RESP}
