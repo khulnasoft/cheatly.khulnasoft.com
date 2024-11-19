@@ -11,13 +11,14 @@ RUN apk add --no-cache --virtual build-deps \
       icu-dev \
       py3-pip \
       git \
-    && apk add --no-cache \
+      && apk add --no-cache \
       libffi-dev \
       py3-icu \
       py3-jinja2 \
       py3-flask \
       bash \
-      gawk
+      gawk \
+      icu-libs
 
 # Copy only requirements.txt first to leverage Docker caching
 COPY requirements.txt .
